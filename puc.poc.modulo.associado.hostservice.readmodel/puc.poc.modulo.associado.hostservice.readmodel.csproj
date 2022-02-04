@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="KafkaFlow" Version="2.2.2" />
+    <PackageReference Include="KafkaFlow.Extensions.Hosting" Version="2.2.2" />
+    <PackageReference Include="KafkaFlow.LogHandler.Console" Version="2.2.2" />
+    <PackageReference Include="KafkaFlow.Microsoft.DependencyInjection" Version="2.2.2" />
+    <PackageReference Include="KafkaFlow.Serializer" Version="2.2.2" />
+    <PackageReference Include="KafkaFlow.Serializer.ProtobufNet" Version="2.2.2" />
+    <PackageReference Include="KafkaFlow.TypedHandler" Version="2.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\puc.poc.modulo.associado.messages\puc.poc.modulo.associado.messages.csproj" />
+    <ProjectReference Include="..\puc.poc.modulo.cross\puc.poc.modulo.cross.csproj" />
+  </ItemGroup>
+
+</Project>

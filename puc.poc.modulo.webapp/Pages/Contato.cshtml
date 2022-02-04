@@ -1,0 +1,20 @@
+﻿@page
+@model puc.poc.modulo.webapp.Pages.ContatoModel
+@{
+}
+<form method="post">
+    <div class="form-group">
+        <label>Nome</label>
+        <input type="text" name="nome" class="form-control" placeholder="Digite seu em nome">
+    </div>
+    <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" class="form-control" name="email" placeholder="Digite seu e-mail">
+        <small class="form-text text-muted">Esse e-mail nunca será compartilhado.</small>
+    </div>
+    <div class="form-group">
+        <label>Texto</label>
+        <textarea name="texto" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

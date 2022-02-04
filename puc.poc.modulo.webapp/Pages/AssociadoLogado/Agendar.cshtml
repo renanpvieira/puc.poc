@@ -1,0 +1,65 @@
+﻿@page
+@model puc.poc.modulo.webapp.Pages.AssociadoLogado.AgendarModel
+@{
+    Layout = "_LayoutAssociadoLogado";
+}
+<form>
+    <div class="form-group">
+        <label>Selecione a cidade</label>
+        <select class="form-control" name="cidade">
+        </select>
+        <span id="loading_cidade"><img src="/loading.gif" height="30" width="30" ></span>
+    </div>
+    <div class="form-group">
+        <label>Selecione o tipo de serviço que procura</label>
+        <select class="form-control" name="tipo">
+            <option value="CLI">Clinica</option>
+            <option value="HOS">Hospital</option>
+            <option value="LAB">Laboratório</option>
+            <option value="ENF">Enfermeiros</option>
+            <option value="FIS">Fisioteurapeutas</option>
+            <option value="DEN">Dentistas</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Selecione o serviço</label>
+        <select class="form-control" name="tipo" disabled="disabled">
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Digite a data e hora</label>
+        <input class="form-control" type="datetime-local" name="data">
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-primary">Buscar</button>
+    </div>
+
+
+
+</form>
+<script>
+    $(document).ready(function () {
+
+        $.ajax({
+            url: 'https://localhost:44328/cidade',
+            type : 'get',
+            beforeSend: function () {
+                $('select[name="cidade"]').attr("disabled", "disabled");
+                $('#loading_cidade').css("display", "inline");
+            },
+            success: function (response) {
+                response.forEach(function (data) {
+                    $('select[name="cidade"]').append($('<option>', {
+                        value: data.uniqueid,
+                        text: data.nome
+                    }));
+                });
+            },
+            complete : function(data){
+                $('select[name="cidade"]').removeAttr("disabled");
+                $('#loading_cidade').css("display", "none");
+            }
+        });
+
+    });
+</script>
