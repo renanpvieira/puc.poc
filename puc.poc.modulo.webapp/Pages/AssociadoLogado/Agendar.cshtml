@@ -28,7 +28,7 @@
     </div>
     <div class="form-group">
         <label>Digite a data e hora</label>
-        <input class="form-control" type="datetime-local" name="data">
+        <input class="form-control" type="datetime-local" name="dataHora">
     </div>
     <div class="form-group">
         <label>Selecione para agendamento</label>
@@ -36,14 +36,18 @@
         <span id="loading_conveniado"><img src="/loading.gif" height="30" width="30"></span>
     </div>
     <div class="form-group">
-        <button type="button" name="agendar" class="btn btn-primary">Buscar</button>
+        <button type="button" name="agendar" class="btn btn-primary">Agendar</button>
     </div>
+    <span id="loading_agendamento"><img src="/loading.gif" height="30" width="30"></span>
+    <span id="msgsucesso"><p>Seu agendamento foi realizado com sucesso!</p></span>
 </form>
 <script>
     $(document).ready(function() {
 
         $('#loading_servico').css("display", "none");
         $('#loading_conveniado').css("display", "none");
+        $('#loading_agendamento').css("display", "none");
+        $('#msgsucesso').css("display", "none");
 
         LoadServico();
         LoadCidade();
@@ -142,17 +146,12 @@
     }
 
     function Agendar() {
-        var associado = "51fdb554623de0dbe71b5689";
+        var associadoId = "51fdb554623de0dbe71b5689";
         var conveniadoId = $('select[name="conveniado"]').val();
-
-
-        //var dados = new FormData();
-        //dados.append("conveniado", conveniadoId);
-        //dados.append("lastName", $("#txtLastName").val());
-
-        var dados = { conveniado: conveniadoId };
-
-        console.log(dados);
+        var especialidadeId = $('select[name="servico"]').val();
+        var dataHora = $('input[name="dataHora"]').val();
+        
+        var dados = { conveniado: conveniadoId, associado: associadoId, especialidade: especialidadeId, dataAgendamento: dataHora};
 
         $.ajax({
             url: 'https://localhost:44343/agenda',
@@ -161,14 +160,15 @@
             processData: false,
             contentType: false,
             beforeSend: function () {
-               // $('#loading_cidade').css("display", "inline");
+                $('#loading_agendamento').css("display", "inline");
+                $('#msgsucesso').css("display", "none");
             },
             success: function (response) {
                 console.log(response);
             },
             complete: function (data) {
-                console.log(data);
-                //$('#loading_cidade').css("display", "none");
+                $('#loading_agendamento').css("display", "none");
+                $('#msgsucesso').css("display", "inline");
             }
         });
     }

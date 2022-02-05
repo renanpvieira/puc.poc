@@ -31,21 +31,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.agenda.hosts
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modulo.basedata", "modulo.basedata", "{F2224D90-EE63-419C-A2C4-EADD9794BA73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.basedata", "puc.poc.modulo.basedata\puc.poc.modulo.basedata.csproj", "{DD254DD3-E338-484F-A68A-CFF0A8E18963}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.basedata", "puc.poc.modulo.basedata\puc.poc.modulo.basedata.csproj", "{DD254DD3-E338-484F-A68A-CFF0A8E18963}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modulo.servico", "modulo.servico", "{4FFF06FA-F604-4942-BD6A-FF9D09FAEF56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.servico.dominio", "puc.poc.modulo.servico.dominio\puc.poc.modulo.servico.dominio.csproj", "{B620A8E9-5BA6-458D-B892-21F0398FF056}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.servico.dominio", "puc.poc.modulo.servico.dominio\puc.poc.modulo.servico.dominio.csproj", "{B620A8E9-5BA6-458D-B892-21F0398FF056}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.servico.repositorio.readmodel", "puc.poc.modulo.servico.repositorio.readmodel\puc.poc.modulo.servico.repositorio.readmodel.csproj", "{E80097E3-2DEB-417F-9A41-13B0B1D4C5ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.servico.repositorio.readmodel", "puc.poc.modulo.servico.repositorio.readmodel\puc.poc.modulo.servico.repositorio.readmodel.csproj", "{E80097E3-2DEB-417F-9A41-13B0B1D4C5ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.servico.webapi", "puc.poc.modulo.servico.webapi\puc.poc.modulo.servico.webapi.csproj", "{54ADA53A-11F3-4EF0-BBDE-5EF4B03A0056}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.servico.webapi", "puc.poc.modulo.servico.webapi\puc.poc.modulo.servico.webapi.csproj", "{54ADA53A-11F3-4EF0-BBDE-5EF4B03A0056}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.agenda.hostservice.writemodel", "puc.poc.modulo.agenda.hostservice.writemodel\puc.poc.modulo.agenda.hostservice.writemodel.csproj", "{15566EED-8617-4AA7-857D-99D3350B59AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.agenda.hostservice.writemodel", "puc.poc.modulo.agenda.hostservice.writemodel\puc.poc.modulo.agenda.hostservice.writemodel.csproj", "{15566EED-8617-4AA7-857D-99D3350B59AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.agenda.dominio", "puc.poc.modulo.agenda.dominio\puc.poc.modulo.agenda.dominio.csproj", "{0A4176F9-D7FB-4129-BACD-FF6534D60DE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.agenda.dominio", "puc.poc.modulo.agenda.dominio\puc.poc.modulo.agenda.dominio.csproj", "{0A4176F9-D7FB-4129-BACD-FF6534D60DE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.agenda.repositorio.writemodel", "puc.poc.modulo.agenda.repositorio.writemodel\puc.poc.modulo.agenda.repositorio.writemodel.csproj", "{1F2CF453-D564-4180-B1C8-2E573404CF8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.agenda.repositorio.writemodel", "puc.poc.modulo.agenda.repositorio.writemodel\puc.poc.modulo.agenda.repositorio.writemodel.csproj", "{1F2CF453-D564-4180-B1C8-2E573404CF8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.agenda.messages", "puc.poc.modulo.agenda.messages\puc.poc.modulo.agenda.messages.csproj", "{5E030897-500E-4366-9950-392D6BC7D106}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.agenda.repositorio.readmodel", "puc.poc.modulo.agenda.repositorio.readmodel\puc.poc.modulo.agenda.repositorio.readmodel.csproj", "{94860274-7AFE-4649-A205-B503D6407A79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +125,14 @@ Global
 		{1F2CF453-D564-4180-B1C8-2E573404CF8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F2CF453-D564-4180-B1C8-2E573404CF8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F2CF453-D564-4180-B1C8-2E573404CF8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E030897-500E-4366-9950-392D6BC7D106}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E030897-500E-4366-9950-392D6BC7D106}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E030897-500E-4366-9950-392D6BC7D106}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E030897-500E-4366-9950-392D6BC7D106}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94860274-7AFE-4649-A205-B503D6407A79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94860274-7AFE-4649-A205-B503D6407A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94860274-7AFE-4649-A205-B503D6407A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94860274-7AFE-4649-A205-B503D6407A79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,6 +152,9 @@ Global
 		{54ADA53A-11F3-4EF0-BBDE-5EF4B03A0056} = {4FFF06FA-F604-4942-BD6A-FF9D09FAEF56}
 		{15566EED-8617-4AA7-857D-99D3350B59AD} = {B6F1CF95-978A-40BD-9768-F1F6408824B8}
 		{0A4176F9-D7FB-4129-BACD-FF6534D60DE6} = {B6F1CF95-978A-40BD-9768-F1F6408824B8}
+		{1F2CF453-D564-4180-B1C8-2E573404CF8D} = {B6F1CF95-978A-40BD-9768-F1F6408824B8}
+		{5E030897-500E-4366-9950-392D6BC7D106} = {B6F1CF95-978A-40BD-9768-F1F6408824B8}
+		{94860274-7AFE-4649-A205-B503D6407A79} = {B6F1CF95-978A-40BD-9768-F1F6408824B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89372DF8-D918-4697-8CFC-5B71DCAFB4E2}

@@ -8,5 +8,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\puc.poc.modulo.agenda.messages\puc.poc.modulo.agenda.messages.csproj" />
+    <ProjectReference Include="..\puc.poc.modulo.cross\puc.poc.modulo.cross.csproj" />
+  </ItemGroup>
+
 
 </Project>

@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using puc.poc.modulo.agenda.webapi.Extensions;
 
 namespace puc.poc.modulo.agenda.webapi
 {
@@ -25,11 +26,14 @@ namespace puc.poc.modulo.agenda.webapi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services
+                .AddKafkaBus()
+                .AddSwaggerModule()
+                .AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IHostApplicationLifetime lifetime)
         {
             if (env.IsDevelopment())
             {
@@ -39,8 +43,10 @@ namespace puc.poc.modulo.agenda.webapi
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseAuthorization();
+            
+            app.UseKafkaBus(lifetime);
+            
+            app.UseSwaggerModule();
 
             app.UseEndpoints(endpoints =>
             {

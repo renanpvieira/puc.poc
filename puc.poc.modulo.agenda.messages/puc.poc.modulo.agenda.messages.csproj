@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MongoDB.Bson" Version="2.14.1" />
+    <ProjectReference Include="..\puc.poc.modulo.cross\puc.poc.modulo.cross.csproj" />
   </ItemGroup>
 
 </Project>

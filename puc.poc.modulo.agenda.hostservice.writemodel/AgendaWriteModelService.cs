@@ -1,21 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 
-namespace puc.poc.modulo.associado.hostservice.writemodel
+namespace puc.poc.modulo.agenda.hostservice.writemodel
 {
-    public class AssociadoWriteModelService : IHostedService
+    public class AgendaWriteModelService : IHostedService
     {
         public Task StartAsync(CancellationToken cancellationToken)
         {
             var version = Assembly.GetExecutingAssembly().GetName().Version;
-            Console.WriteLine($"Iniciando Associado Write Model Service. Version: {version}");
-            
-            Console.WriteLine("Associado Write Model Service Iniciado.");
+            Console.WriteLine($"Iniciando Agenda Write Model Service. Version: {version}");
+
+            Console.WriteLine("Agenda Write Model Service Iniciado.");
             return Task.CompletedTask;
         }
 
