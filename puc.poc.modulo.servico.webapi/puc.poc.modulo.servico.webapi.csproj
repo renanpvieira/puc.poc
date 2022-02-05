@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\puc.poc.modulo.servico.dominio\puc.poc.modulo.servico.dominio.csproj" />
+    <ProjectReference Include="..\puc.poc.modulo.servico.repositorio.readmodel\puc.poc.modulo.servico.repositorio.readmodel.csproj" />
+  </ItemGroup>
+
+
+</Project>

@@ -8,7 +8,7 @@
         <label>Selecione a cidade</label>
         <select class="form-control" name="cidade">
         </select>
-        <span id="loading_cidade"><img src="/loading.gif" height="30" width="30" ></span>
+        <span id="loading_cidade"><img src="/loading.gif" height="30" width="30"></span>
     </div>
     <div class="form-group">
         <label>Selecione o tipo de serviço que procura</label>
@@ -18,31 +18,110 @@
             <option value="LAB">Laboratório</option>
             <option value="ENF">Enfermeiros</option>
             <option value="FIS">Fisioteurapeutas</option>
-            <option value="DEN">Dentistas</option>
+            <option value="DES">Dentistas</option>
         </select>
     </div>
     <div class="form-group">
         <label>Selecione o serviço</label>
-        <select class="form-control" name="tipo" disabled="disabled">
-        </select>
+        <select class="form-control" name="servico"></select>
+        <span id="loading_servico"><img src="/loading.gif" height="30" width="30"></span>
     </div>
     <div class="form-group">
         <label>Digite a data e hora</label>
         <input class="form-control" type="datetime-local" name="data">
     </div>
     <div class="form-group">
-        <button type="button" class="btn btn-primary">Buscar</button>
+        <label>Selecione para agendamento</label>
+        <select class="form-control" name="conveniado"></select>
+        <span id="loading_conveniado"><img src="/loading.gif" height="30" width="30"></span>
     </div>
-
-
-
+    <div class="form-group">
+        <button type="button" name="agendar" class="btn btn-primary">Buscar</button>
+    </div>
 </form>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
+
+        $('#loading_servico').css("display", "none");
+        $('#loading_conveniado').css("display", "none");
+
+        LoadServico();
+        LoadCidade();
+        
+        $('select[name="tipo"]').change(function() {
+            LoadServico();
+        });
+
+        $('select[name="servico"]').change(function () {
+            LoadConveniado();
+        });
+
+        $('button[name="agendar"]').on('click', function () {
+            Agendar();
+        });
+
+    });
+
+    function LoadServico() {
+
+        var tipo = $('select[name="tipo"]').val();
 
         $.ajax({
+            url: 'https://localhost:44373/servico?tipo=' + tipo,
+            type: 'get',
+            beforeSend: function() {
+                $('select[name="servico"]').empty();
+                $('select[name="servico"]').attr("disabled", "disabled");
+                $('#loading_servico').css("display", "inline");
+            },
+            success: function(response) {
+                response.forEach(function(data) {
+                    $('select[name="servico"]').append($('<option>',
+                        {
+                            value: data.id,
+                            text: data.descricao
+                        }));
+                });
+            },
+            complete: function(data) {
+                $('select[name="servico"]').removeAttr("disabled");
+                $('#loading_servico').css("display", "none");
+            }
+        });
+    }
+    
+    function LoadConveniado() {
+        var servico = $('select[name="servico"]').val();
+        var cidade = $('select[name="cidade"]').val();
+        $.ajax({
+            url: 'http://localhost:29640/conveniado/lista?cidade=' + cidade + '&especialidade=' + servico,
+            type: 'get',
+            beforeSend: function () {
+                $('select[name="conveniado"]').empty();
+                $('select[name="conveniado"]').attr("disabled", "disabled");
+                $('#loading_conveniado').css("display", "inline");
+            },
+            success: function (response) {
+                response.forEach(function (data) {
+                    console.log(data);
+                    $('select[name="conveniado"]').append($('<option>',
+                        {
+                            value: data.uniqueId,
+                            text: data.nome
+                        }));
+                });
+            },
+            complete: function (data) {
+                $('select[name="conveniado"]').removeAttr("disabled");
+                $('#loading_conveniado').css("display", "none");
+            }
+        });
+    }
+
+    function LoadCidade() {
+        $.ajax({
             url: 'https://localhost:44328/cidade',
-            type : 'get',
+            type: 'get',
             beforeSend: function () {
                 $('select[name="cidade"]').attr("disabled", "disabled");
                 $('#loading_cidade').css("display", "inline");
@@ -50,16 +129,48 @@
             success: function (response) {
                 response.forEach(function (data) {
                     $('select[name="cidade"]').append($('<option>', {
-                        value: data.uniqueid,
-                        text: data.nome
-                    }));
+                            value: data.uniqueId,
+                            text: data.nome
+                        }));
                 });
             },
-            complete : function(data){
+            complete: function (data) {
                 $('select[name="cidade"]').removeAttr("disabled");
                 $('#loading_cidade').css("display", "none");
             }
         });
+    }
 
-    });
+    function Agendar() {
+        var associado = "51fdb554623de0dbe71b5689";
+        var conveniadoId = $('select[name="conveniado"]').val();
+
+
+        //var dados = new FormData();
+        //dados.append("conveniado", conveniadoId);
+        //dados.append("lastName", $("#txtLastName").val());
+
+        var dados = { conveniado: conveniadoId };
+
+        console.log(dados);
+
+        $.ajax({
+            url: 'https://localhost:44343/agenda',
+            type: 'post',
+            data: dados,
+            processData: false,
+            contentType: false,
+            beforeSend: function () {
+               // $('#loading_cidade').css("display", "inline");
+            },
+            success: function (response) {
+                console.log(response);
+            },
+            complete: function (data) {
+                console.log(data);
+                //$('#loading_cidade').css("display", "none");
+            }
+        });
+    }
+
 </script>

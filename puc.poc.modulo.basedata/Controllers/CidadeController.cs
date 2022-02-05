@@ -24,22 +24,22 @@ namespace puc.poc.modulo.basedata.Controllers
             {
                 new Cidade
                 {
-                    UniqueId = new Guid("77e84f2f-bb7e-4048-80a9-dfd06eb0749b"),
+                    UniqueId = 1,
                     Nome = "Belo horizonte"
                 },
                 new Cidade
                 {
-                    UniqueId = new Guid("77e84f2f-bb7e-4048-80a9-dfd06eb0749b"),
+                    UniqueId = 2,
                     Nome = "Contagem"
                 },
                 new Cidade
                 {
-                    UniqueId = new Guid("77e84f2f-bb7e-4048-80a9-dfd06eb0749b"),
+                    UniqueId = 3,
                     Nome = "Ribeirão das neves"
                 },
                 new Cidade
                 {
-                    UniqueId = new Guid("77e84f2f-bb7e-4048-80a9-dfd06eb0749b"),
+                    UniqueId = 4,
                     Nome = "Santa luzia"
                 }
             };
@@ -54,7 +54,7 @@ namespace puc.poc.modulo.basedata.Controllers
 
     public class Cidade
     {
-        public Guid UniqueId { get; set; }
+        public int UniqueId { get; set; }
         public string Nome { get; set; }
     }
 }
