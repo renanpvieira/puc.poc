@@ -1,0 +1,24 @@
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/runtime:3.1 AS base
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
+WORKDIR /src
+COPY ["puc.poc.modulo.financeiro.hostservice.writemodel/puc.poc.modulo.financeiro.hostservice.writemodel.csproj", "puc.poc.modulo.financeiro.hostservice.writemodel/"]
+COPY ["puc.poc.modulo.financeiro.messages/puc.poc.modulo.financeiro.messages.csproj", "puc.poc.modulo.financeiro.messages/"]
+COPY ["puc.poc.modulo.cross/puc.poc.modulo.cross.csproj", "puc.poc.modulo.cross/"]
+COPY ["puc.poc.modulo.financeiro.repositorio.writemodel/puc.poc.modulo.financeiro.repositorio.writemodel.csproj", "puc.poc.modulo.financeiro.repositorio.writemodel/"]
+COPY ["puc.poc.modulo.financeiro.dominio/puc.poc.modulo.financeiro.dominio.csproj", "puc.poc.modulo.financeiro.dominio/"]
+RUN dotnet restore "puc.poc.modulo.financeiro.hostservice.writemodel/puc.poc.modulo.financeiro.hostservice.writemodel.csproj"
+COPY . .
+WORKDIR "/src/puc.poc.modulo.financeiro.hostservice.writemodel"
+RUN dotnet build "puc.poc.modulo.financeiro.hostservice.writemodel.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "puc.poc.modulo.financeiro.hostservice.writemodel.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "puc.poc.modulo.financeiro.hostservice.writemodel.dll"]

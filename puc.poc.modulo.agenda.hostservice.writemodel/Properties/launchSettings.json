@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "puc.poc.modulo.agenda.hostservice.writemodel": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

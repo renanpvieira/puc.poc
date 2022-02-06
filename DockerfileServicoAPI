@@ -1,0 +1,26 @@
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:3.1 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
+WORKDIR /src
+COPY ["puc.poc.modulo.servico.webapi/puc.poc.modulo.servico.webapi.csproj", "puc.poc.modulo.servico.webapi/"]
+COPY ["puc.poc.modulo.servico.dominio/puc.poc.modulo.servico.dominio.csproj", "puc.poc.modulo.servico.dominio/"]
+COPY ["puc.poc.modulo.servico.repositorio.readmodel/puc.poc.modulo.servico.repositorio.readmodel.csproj", "puc.poc.modulo.servico.repositorio.readmodel/"]
+COPY ["puc.poc.modulo.cross/puc.poc.modulo.cross.csproj", "puc.poc.modulo.cross/"]
+COPY ["puc.poc.modulo.servico.messages/puc.poc.modulo.servico.messages.csproj", "puc.poc.modulo.servico.messages/"]
+RUN dotnet restore "puc.poc.modulo.servico.webapi/puc.poc.modulo.servico.webapi.csproj"
+COPY . .
+WORKDIR "/src/puc.poc.modulo.servico.webapi"
+RUN dotnet build "puc.poc.modulo.servico.webapi.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "puc.poc.modulo.servico.webapi.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "puc.poc.modulo.servico.webapi.dll"]

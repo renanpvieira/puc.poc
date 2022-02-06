@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "puc.poc.modulo.agenda.hostservice.readmodel": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

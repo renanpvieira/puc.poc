@@ -69,6 +69,81 @@ services:
      volumes:
        - mysqldata:/var/lib/mysql
      restart: always 
+
+  poc.puc.modulo.agenda.rm:
+    image: ${DOCKER_REGISTRY-}pocpucmoduloagendarm
+    container_name: agenda.read.model
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileAgendaRM
+    networks: 
+      - compose-network
+    ports:
+      - "20001:80"
+      
+  poc.puc.modulo.agenda.wm:
+    image: ${DOCKER_REGISTRY-}pocpucmoduloagendawm
+    container_name: agenda.write.model
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileAgendaWM
+    networks: 
+      - compose-network
+    ports:
+      - "20002:80"
+
+  poc.puc.modulo.agenda.api:
+    image: ${DOCKER_REGISTRY-}pocpucmoduloagendaapi
+    container_name: agenda.api
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileAgendaAPI
+    networks: 
+      - compose-network
+    ports:
+      - "20003:80"      
+  
+  poc.puc.modulo.associado.rm:
+    image: ${DOCKER_REGISTRY-}pocpucmoduloassociadorm
+    container_name: associado.read.model
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileAssociadoRM
+    networks: 
+      - compose-network
+    ports:
+      - "20004:80"
+      
+  poc.puc.modulo.associado.wm:
+    image: ${DOCKER_REGISTRY-}pocpucmoduloassociadowm
+    container_name: associado.write.model
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileAssociadoWM
+    networks: 
+      - compose-network
+    ports:
+      - "20204:80"
   
   poc.puc.modulo.associado.api:
     image: ${DOCKER_REGISTRY-}pucpocmoduloassociadowebapi
@@ -76,27 +151,149 @@ services:
     depends_on: 
         - mysql
         - mongo
+        - kafka
     build:
       context: .
-      dockerfile: DockerfileAssociado
+      dockerfile: DockerfileAssociadoAPI
     networks: 
       - compose-network
     ports:
-      - "20000:80"
-
+      - "20005:80"
+  
   poc.puc.modulo.conveniado.api:
     image: ${DOCKER_REGISTRY-}pucpocmoduloconveniadowebapi
     container_name: conveniado.webapi
     depends_on: 
         - mysql
         - mongo
+        - kafka
     build:
       context: .
-      dockerfile: DockerfileConveniado
+      dockerfile: DockerfileConveniadoAPI
     networks: 
       - compose-network
     ports:
-      - "20001:80"
+      - "20006:80"
+  
+  poc.puc.modulo.file.api:
+    image: ${DOCKER_REGISTRY-}pocpucmodulofileapi
+    container_name: file.webapi
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileFileAPI
+    networks: 
+      - compose-network
+    ports:
+      - "20007:80"
+
+  poc.puc.modulo.financeiro.rm:
+    image: ${DOCKER_REGISTRY-}pocpucmodulofinanceirorm
+    container_name: financeiro.read.model
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileFinanceiroRM
+    networks: 
+      - compose-network
+    ports:
+      - "20008:80"
+      
+  poc.puc.modulo.financeiro.wm:
+    image: ${DOCKER_REGISTRY-}pocpucmodulofinanceirowm
+    container_name: financeiro.write.model
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileFinanceiroWM
+    networks: 
+      - compose-network
+    ports:
+      - "20009:80"
+  
+  poc.puc.modulo.financeiro.api:
+    image: ${DOCKER_REGISTRY-}pocpucmodulofinanceiroapi
+    container_name: financeiro.webapi
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileFinanceiroAPI
+    networks: 
+      - compose-network
+    ports:
+      - "20010:80"      
+  
+  poc.puc.modulo.servico.rm:
+    image: ${DOCKER_REGISTRY-}pocpucmoduloservicorm
+    container_name: servico.read.model
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileServicoRM
+    networks: 
+      - compose-network
+    ports:
+      - "20011:80"
+      
+  poc.puc.modulo.servico.wm:
+    image: ${DOCKER_REGISTRY-}pocpucmoduloservicowm
+    container_name: servico.write.model
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileServicoWM
+    networks: 
+      - compose-network
+    ports:
+      - "20012:80"
+  
+  poc.puc.modulo.servico.api:
+    image: ${DOCKER_REGISTRY-}pocpucmoduloservicoapi
+    container_name: servico.webapi
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileServicoAPI
+    networks: 
+      - compose-network
+    ports:
+      - "20013:80"
+  
+  poc.puc.modulo.basedata.api:
+    image: ${DOCKER_REGISTRY-}pocpucmodulobasedataapi
+    container_name: basedata.webapi
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileBaseDataApi
+    networks: 
+      - compose-network
+    ports:
+      - "20200:80"    
 
 volumes:
     mysqldata:

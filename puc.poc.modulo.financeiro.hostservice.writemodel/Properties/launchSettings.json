@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "puc.poc.modulo.financeiro.hostservice.writemodel": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "puc.poc.modulo.associado.hostservice.readmodel": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

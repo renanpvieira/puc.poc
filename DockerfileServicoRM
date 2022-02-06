@@ -1,0 +1,24 @@
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/runtime:3.1 AS base
+WORKDIR /app
+
+FROM mcr.microsoft.com/dotnet/sdk:3.1 AS build
+WORKDIR /src
+COPY ["puc.poc.modulo.servico.hostservice.readmodel/puc.poc.modulo.servico.hostservice.readmodel.csproj", "puc.poc.modulo.servico.hostservice.readmodel/"]
+COPY ["puc.poc.modulo.servico.repositorio.readmodel/puc.poc.modulo.servico.repositorio.readmodel.csproj", "puc.poc.modulo.servico.repositorio.readmodel/"]
+COPY ["puc.poc.modulo.servico.dominio/puc.poc.modulo.servico.dominio.csproj", "puc.poc.modulo.servico.dominio/"]
+COPY ["puc.poc.modulo.cross/puc.poc.modulo.cross.csproj", "puc.poc.modulo.cross/"]
+COPY ["puc.poc.modulo.servico.messages/puc.poc.modulo.servico.messages.csproj", "puc.poc.modulo.servico.messages/"]
+RUN dotnet restore "puc.poc.modulo.servico.hostservice.readmodel/puc.poc.modulo.servico.hostservice.readmodel.csproj"
+COPY . .
+WORKDIR "/src/puc.poc.modulo.servico.hostservice.readmodel"
+RUN dotnet build "puc.poc.modulo.servico.hostservice.readmodel.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "puc.poc.modulo.servico.hostservice.readmodel.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "puc.poc.modulo.servico.hostservice.readmodel.dll"]
