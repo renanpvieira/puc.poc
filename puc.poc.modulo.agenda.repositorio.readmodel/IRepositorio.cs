@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using puc.poc.modulo.agenda.dominio.ReadModel;
 
-namespace puc.poc.modulo.servico.repositorio.readmodel
+namespace puc.poc.modulo.agenda.repositorio.readmodel
 {
     public interface IRepositorio<T> where T : BaseEntity
     {

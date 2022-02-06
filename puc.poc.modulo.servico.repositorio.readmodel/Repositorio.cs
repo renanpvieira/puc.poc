@@ -19,5 +19,8 @@ namespace puc.poc.modulo.servico.repositorio.readmodel
 
         public async Task<T> GetAsync(string id) =>
             await collection.Find(x => x.Id == id).FirstOrDefaultAsync();
+
+        public async Task InsertAsync(T objeto) =>
+            await collection.InsertOneAsync(objeto);
     }
 }

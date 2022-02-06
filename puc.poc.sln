@@ -53,19 +53,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.agenda.repos
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modulo.financeiro", "modulo.financeiro", "{07EA90CA-126A-40F1-9058-838FD9FC51C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.webapi", "puc.poc.modulo.financeiro.webapi\puc.poc.modulo.financeiro.webapi.csproj", "{966BFBC1-D584-4BBF-9A52-ADBBC657DB86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.financeiro.webapi", "puc.poc.modulo.financeiro.webapi\puc.poc.modulo.financeiro.webapi.csproj", "{966BFBC1-D584-4BBF-9A52-ADBBC657DB86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.dominio", "puc.poc.modulo.financeiro.dominio\puc.poc.modulo.financeiro.dominio.csproj", "{B9EDB0AF-EA6B-4F78-B2C4-7C3B03894216}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.financeiro.dominio", "puc.poc.modulo.financeiro.dominio\puc.poc.modulo.financeiro.dominio.csproj", "{B9EDB0AF-EA6B-4F78-B2C4-7C3B03894216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.messages", "puc.poc.modulo.financeiro.messages\puc.poc.modulo.financeiro.messages.csproj", "{DF3469A9-5B0F-47B5-9874-C93C5E9AAFAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.financeiro.messages", "puc.poc.modulo.financeiro.messages\puc.poc.modulo.financeiro.messages.csproj", "{DF3469A9-5B0F-47B5-9874-C93C5E9AAFAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.repositorio.readmodel", "puc.poc.modulo.financeiro.repositorio.readmodel\puc.poc.modulo.financeiro.repositorio.readmodel.csproj", "{EF397FEA-3CE8-4981-ABB8-2342D0823FA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.financeiro.repositorio.readmodel", "puc.poc.modulo.financeiro.repositorio.readmodel\puc.poc.modulo.financeiro.repositorio.readmodel.csproj", "{EF397FEA-3CE8-4981-ABB8-2342D0823FA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.repositorio.writemodel", "puc.poc.modulo.financeiro.repositorio.writemodel\puc.poc.modulo.financeiro.repositorio.writemodel.csproj", "{70020DAB-52C0-48B2-B38E-215A36341005}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.financeiro.repositorio.writemodel", "puc.poc.modulo.financeiro.repositorio.writemodel\puc.poc.modulo.financeiro.repositorio.writemodel.csproj", "{70020DAB-52C0-48B2-B38E-215A36341005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.hostservice.readmodel", "puc.poc.modulo.financeiro.hostservice.readmodel\puc.poc.modulo.financeiro.hostservice.readmodel.csproj", "{85B077CE-D94D-4177-918B-A726C411D2AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.financeiro.hostservice.readmodel", "puc.poc.modulo.financeiro.hostservice.readmodel\puc.poc.modulo.financeiro.hostservice.readmodel.csproj", "{85B077CE-D94D-4177-918B-A726C411D2AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.hostservice.writemodel", "puc.poc.modulo.financeiro.hostservice.writemodel\puc.poc.modulo.financeiro.hostservice.writemodel.csproj", "{44272F3B-FC4D-47B1-BED0-01560E40D69C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.financeiro.hostservice.writemodel", "puc.poc.modulo.financeiro.hostservice.writemodel\puc.poc.modulo.financeiro.hostservice.writemodel.csproj", "{44272F3B-FC4D-47B1-BED0-01560E40D69C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modulo.filemanager", "modulo.filemanager", "{EFCA240A-67FE-49ED-AC94-A25E30C7030E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.filemanager.webapi", "puc.poc.modulo.filemanager.webapi\puc.poc.modulo.filemanager.webapi.csproj", "{3EBF00C3-A544-4D72-98CC-D0E6E60B311C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.servico.repositorio.writemodel", "puc.poc.modulo.servico.repositorio.writemodel\puc.poc.modulo.servico.repositorio.writemodel.csproj", "{09CF362E-544A-490A-9E41-25F8A273C659}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.servico.messages", "puc.poc.modulo.servico.messages\puc.poc.modulo.servico.messages.csproj", "{3D2D6B74-9A7E-43DD-8DAA-CFE857D862EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.servico.hostservice.readmodel", "puc.poc.modulo.servico.hostservice.readmodel\puc.poc.modulo.servico.hostservice.readmodel.csproj", "{707F3B6F-7CB9-49FD-88EF-B2D50D48E5D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.servico.hostservice.writemodel", "puc.poc.modulo.servico.hostservice.writemodel\puc.poc.modulo.servico.hostservice.writemodel.csproj", "{E464AA72-6FFB-49B1-B758-8609D76396A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -177,6 +189,26 @@ Global
 		{44272F3B-FC4D-47B1-BED0-01560E40D69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44272F3B-FC4D-47B1-BED0-01560E40D69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44272F3B-FC4D-47B1-BED0-01560E40D69C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EBF00C3-A544-4D72-98CC-D0E6E60B311C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EBF00C3-A544-4D72-98CC-D0E6E60B311C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EBF00C3-A544-4D72-98CC-D0E6E60B311C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EBF00C3-A544-4D72-98CC-D0E6E60B311C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09CF362E-544A-490A-9E41-25F8A273C659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09CF362E-544A-490A-9E41-25F8A273C659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09CF362E-544A-490A-9E41-25F8A273C659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09CF362E-544A-490A-9E41-25F8A273C659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2D6B74-9A7E-43DD-8DAA-CFE857D862EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2D6B74-9A7E-43DD-8DAA-CFE857D862EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2D6B74-9A7E-43DD-8DAA-CFE857D862EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2D6B74-9A7E-43DD-8DAA-CFE857D862EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{707F3B6F-7CB9-49FD-88EF-B2D50D48E5D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{707F3B6F-7CB9-49FD-88EF-B2D50D48E5D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{707F3B6F-7CB9-49FD-88EF-B2D50D48E5D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{707F3B6F-7CB9-49FD-88EF-B2D50D48E5D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E464AA72-6FFB-49B1-B758-8609D76396A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E464AA72-6FFB-49B1-B758-8609D76396A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E464AA72-6FFB-49B1-B758-8609D76396A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E464AA72-6FFB-49B1-B758-8609D76396A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -206,6 +238,11 @@ Global
 		{70020DAB-52C0-48B2-B38E-215A36341005} = {07EA90CA-126A-40F1-9058-838FD9FC51C7}
 		{85B077CE-D94D-4177-918B-A726C411D2AF} = {07EA90CA-126A-40F1-9058-838FD9FC51C7}
 		{44272F3B-FC4D-47B1-BED0-01560E40D69C} = {07EA90CA-126A-40F1-9058-838FD9FC51C7}
+		{3EBF00C3-A544-4D72-98CC-D0E6E60B311C} = {EFCA240A-67FE-49ED-AC94-A25E30C7030E}
+		{09CF362E-544A-490A-9E41-25F8A273C659} = {4FFF06FA-F604-4942-BD6A-FF9D09FAEF56}
+		{3D2D6B74-9A7E-43DD-8DAA-CFE857D862EF} = {4FFF06FA-F604-4942-BD6A-FF9D09FAEF56}
+		{707F3B6F-7CB9-49FD-88EF-B2D50D48E5D5} = {4FFF06FA-F604-4942-BD6A-FF9D09FAEF56}
+		{E464AA72-6FFB-49B1-B758-8609D76396A2} = {4FFF06FA-F604-4942-BD6A-FF9D09FAEF56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89372DF8-D918-4697-8CFC-5B71DCAFB4E2}

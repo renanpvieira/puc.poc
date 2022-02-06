@@ -57,10 +57,9 @@
     });
     
     function GerarBoleto(uniqueid) {
-        var associadoId = "51fdb554623de0dbe71b5689";
         var dataHora = $('input[name="dataHora"]').val();
 
-        var dados = { associado: associadoId, dataVencimento: dataHora };
+        var dados = { associado: uniqueid, dataVencimento: dataHora };
 
         $.ajax({
             url: 'https://localhost:44313/boleto',

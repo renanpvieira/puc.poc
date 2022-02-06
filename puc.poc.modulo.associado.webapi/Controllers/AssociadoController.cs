@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
@@ -23,30 +24,16 @@ namespace puc.poc.modulo.associado.webapi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Get(Guid uniqueId)
+        public async Task<ActionResult> Get(string uniqueId)
         {
-            var associado = new Associado
-            {
-                UniqueId = "61fdb554623de0dbe71b568y",
-                Nome = "Linus Benedict Torvalds" 
-
-            };
-
+            var associado = GetAssociados().FirstOrDefault(x => x.UniqueId == uniqueId);
             return this.Ok(associado);
         }
 
         [HttpGet("buscar")]
         public async Task<ActionResult> Get()
         {
-            var associados = new List<Associado>()
-            {
-                new Associado { UniqueId = "61fdb554623de0dbe71b568y", Nome = "Peter Parker", CPF = "11997326478" },
-                new Associado { UniqueId = "61fdb554623de0dbe71b570y", Nome = "Tony Stark", CPF = "21897526577" },
-                new Associado { UniqueId = "61fdb554623de0dbe71b569y", Nome = "Steven Rogers", CPF = "31797626672" },
-                new Associado { UniqueId = "61fdb554623de0dbe71b520y", Nome = "Brian Banner", CPF = "41697726971" }
-            };
-
-            return this.Ok(associados);
+            return this.Ok(GetAssociados());
         }
 
         [HttpPost]
@@ -56,7 +43,16 @@ namespace puc.poc.modulo.associado.webapi.Controllers
             await producer.ProduceAync(command);
             return this.Accepted();
         }
-    }
 
-   
+        private List<Associado> GetAssociados()
+        {
+            return new List<Associado>()
+            {
+                new Associado { UniqueId = "61fdb554623de0dbe71b568y", Nome = "Peter Parker", CPF = "11997326478" },
+                new Associado { UniqueId = "61fdb554623de0dbe71b570y", Nome = "Tony Stark", CPF = "21897526577" },
+                new Associado { UniqueId = "61fdb554623de0dbe71b569y", Nome = "Steven Rogers", CPF = "31797626672" },
+                new Associado { UniqueId = "61fdb554623de0dbe71b520y", Nome = "Brian Banner", CPF = "41697726971" }
+            };
+        }
+    }
 }

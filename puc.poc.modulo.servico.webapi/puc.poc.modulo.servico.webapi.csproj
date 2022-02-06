@@ -6,10 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\puc.poc.modulo.cross\puc.poc.modulo.cross.csproj" />
     <ProjectReference Include="..\puc.poc.modulo.servico.dominio\puc.poc.modulo.servico.dominio.csproj" />
+    <ProjectReference Include="..\puc.poc.modulo.servico.messages\puc.poc.modulo.servico.messages.csproj" />
     <ProjectReference Include="..\puc.poc.modulo.servico.repositorio.readmodel\puc.poc.modulo.servico.repositorio.readmodel.csproj" />
   </ItemGroup>
 

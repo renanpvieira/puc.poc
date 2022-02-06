@@ -10,7 +10,7 @@ using puc.poc.modulo.financeiro.messages.Commands.v1;
 using puc.poc.modulo.financeiro.messages.Events.v1;
 using puc.poc.modulo.financeiro.repositorio.writemodel;
 
-namespace puc.poc.modulo.agenda.hostservice.writemodel.Handlers
+namespace puc.poc.modulo.financeiro.hostservice.writemodel.Handlers
 {
     public class CreateAgendamentoCommandHandler : IMessageHandler<CreateBoletoCommand>
     {

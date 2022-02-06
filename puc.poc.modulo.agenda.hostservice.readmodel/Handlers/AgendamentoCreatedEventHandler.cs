@@ -4,7 +4,7 @@ using KafkaFlow;
 using KafkaFlow.TypedHandler;
 using puc.poc.modulo.agenda.dominio.ReadModel;
 using puc.poc.modulo.agenda.messages.Events.v1;
-using puc.poc.modulo.servico.repositorio.readmodel;
+using puc.poc.modulo.agenda.repositorio.readmodel;
 
 namespace puc.poc.modulo.agenda.hostservice.readmodel.Handlers
 {

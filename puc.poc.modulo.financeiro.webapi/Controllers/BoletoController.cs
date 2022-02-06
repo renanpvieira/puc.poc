@@ -23,9 +23,7 @@ namespace puc.poc.modulo.financeiro.webapi.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(string associado, DateTime dataVencimento)
         {
-            System.Threading.Thread.Sleep(2000);
-
-            var command = new CreateBoletoCommand("61fdb554623de0dbe71b568y", new DateTime(2022, 2, 10));
+            var command = new CreateBoletoCommand(associado, dataVencimento);
             await producer.ProduceAync(command);
             return this.Accepted();
         }

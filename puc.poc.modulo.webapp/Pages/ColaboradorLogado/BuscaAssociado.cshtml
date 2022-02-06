@@ -1,0 +1,50 @@
+﻿@page
+@model puc.poc.modulo.webapp.Pages.ColaboradorLogado.BuscaAssociadoModel
+@{
+    Layout = "_LayoutColaboradorLogado";
+}
+<br />
+<br />
+<div class="form-group">
+    <input class="form-control" placeholder="Digite o CPF para filtrar" type="text" name="busca">
+</div>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">CPF</th>
+            <th scope="col">Nome</th>
+            <th scope="col">#</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Associados)
+        {
+        <tr>
+            <td class="cpf">@item.CPF</td>
+            <td>@item.Nome</td>
+            <td><a href="/ColaboradorLogado/IniciarAtendimento?associado=@item.UniqueId" class="btn btn-primary btn-sm">Iniciar atendimento</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function() {
+
+        $('#loading_boleto').css("display", "none");
+        $('#msgsucesso').css("display", "none");
+
+        $('input[name="busca"]').on('input', function () {
+            var input = $(this).val();
+            $('td.cpf').each(function() {
+                var cellText = $(this).html();
+                if (cellText.includes(input)) {
+                    $(this).parent('tr').show();
+                } else {
+                    $(this).parent('tr').hide();
+                }
+            });
+        });
+    });
+</script>

@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MongoDB.Driver;
 using puc.poc.modulo.agenda.hostservice.readmodel.Extensions;
-using puc.poc.modulo.servico.repositorio.readmodel;
+using puc.poc.modulo.agenda.repositorio.readmodel;
 
 namespace puc.poc.modulo.agenda.hostservice.readmodel
 {
