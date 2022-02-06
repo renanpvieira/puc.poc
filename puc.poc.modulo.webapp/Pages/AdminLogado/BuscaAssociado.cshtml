@@ -1,0 +1,85 @@
+﻿@page
+@model puc.poc.modulo.webapp.Pages.AdminLogado.BuscaAssociadoModel
+@{
+    Layout = "_LayoutAdminLogado";
+}
+<br/>
+<br />
+<div class="form-group">
+    <input class="form-control" placeholder="Digite o CPF para filtrar" type="text" name="busca">
+</div>
+<br />
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">CPF</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Nome</th>
+        <th scope="col">#</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Associados)
+    {
+        <tr>
+            <td class="cpf">@item.CPF</td>
+            <td>@item.Nome</td>
+            <td><input class="form-control" type="date" name="dataHora" width="50"></td>
+            <td><button type="button" uniqueid="@item.UniqueId" name="boleto" class="btn btn-primary btn-sm">Gerar boleto</button></td>
+        </tr>
+    }
+    </tbody>
+</table>
+<span id="loading_boleto"><img src="/loading.gif" height="30" width="30"></span>
+<span id="msgsucesso"><p>Boleto gerado com sucesso!</p></span>
+<script>
+    $(document).ready(function() {
+
+        $('#loading_boleto').css("display", "none");
+        $('#msgsucesso').css("display", "none");
+
+        $('input[name="busca"]').on('input', function () {
+            var input = $(this).val();
+            $('td.cpf').each(function() {
+                var cellText = $(this).html();
+                if (cellText.includes(input)) {
+                    $(this).parent('tr').show();
+                } else {
+                    $(this).parent('tr').hide();
+                }
+            });
+        });
+
+        $('button[name="boleto"]').on('click', function () {
+            GerarBoleto($(this).attr('uniqueid'));
+        });
+
+    });
+    
+    function GerarBoleto(uniqueid) {
+        var associadoId = "51fdb554623de0dbe71b5689";
+        var dataHora = $('input[name="dataHora"]').val();
+
+        var dados = { associado: associadoId, dataVencimento: dataHora };
+
+        $.ajax({
+            url: 'https://localhost:44313/boleto',
+            type: 'post',
+            data: dados,
+            processData: false,
+            contentType: false,
+            beforeSend: function () {
+                $('#loading_boleto').css("display", "inline");
+                $('#msgsucesso').css("display", "none");
+            },
+            success: function (response) {
+                console.log(response);
+            },
+            complete: function (data) {
+                $('#loading_boleto').css("display", "none");
+                $('#msgsucesso').css("display", "inline");
+            }
+        });
+    }
+    
+</script>

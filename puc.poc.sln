@@ -47,9 +47,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.agenda.domin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.agenda.repositorio.writemodel", "puc.poc.modulo.agenda.repositorio.writemodel\puc.poc.modulo.agenda.repositorio.writemodel.csproj", "{1F2CF453-D564-4180-B1C8-2E573404CF8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.agenda.messages", "puc.poc.modulo.agenda.messages\puc.poc.modulo.agenda.messages.csproj", "{5E030897-500E-4366-9950-392D6BC7D106}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.agenda.messages", "puc.poc.modulo.agenda.messages\puc.poc.modulo.agenda.messages.csproj", "{5E030897-500E-4366-9950-392D6BC7D106}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.agenda.repositorio.readmodel", "puc.poc.modulo.agenda.repositorio.readmodel\puc.poc.modulo.agenda.repositorio.readmodel.csproj", "{94860274-7AFE-4649-A205-B503D6407A79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "puc.poc.modulo.agenda.repositorio.readmodel", "puc.poc.modulo.agenda.repositorio.readmodel\puc.poc.modulo.agenda.repositorio.readmodel.csproj", "{94860274-7AFE-4649-A205-B503D6407A79}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "modulo.financeiro", "modulo.financeiro", "{07EA90CA-126A-40F1-9058-838FD9FC51C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.webapi", "puc.poc.modulo.financeiro.webapi\puc.poc.modulo.financeiro.webapi.csproj", "{966BFBC1-D584-4BBF-9A52-ADBBC657DB86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.dominio", "puc.poc.modulo.financeiro.dominio\puc.poc.modulo.financeiro.dominio.csproj", "{B9EDB0AF-EA6B-4F78-B2C4-7C3B03894216}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.messages", "puc.poc.modulo.financeiro.messages\puc.poc.modulo.financeiro.messages.csproj", "{DF3469A9-5B0F-47B5-9874-C93C5E9AAFAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.repositorio.readmodel", "puc.poc.modulo.financeiro.repositorio.readmodel\puc.poc.modulo.financeiro.repositorio.readmodel.csproj", "{EF397FEA-3CE8-4981-ABB8-2342D0823FA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.repositorio.writemodel", "puc.poc.modulo.financeiro.repositorio.writemodel\puc.poc.modulo.financeiro.repositorio.writemodel.csproj", "{70020DAB-52C0-48B2-B38E-215A36341005}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.hostservice.readmodel", "puc.poc.modulo.financeiro.hostservice.readmodel\puc.poc.modulo.financeiro.hostservice.readmodel.csproj", "{85B077CE-D94D-4177-918B-A726C411D2AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "puc.poc.modulo.financeiro.hostservice.writemodel", "puc.poc.modulo.financeiro.hostservice.writemodel\puc.poc.modulo.financeiro.hostservice.writemodel.csproj", "{44272F3B-FC4D-47B1-BED0-01560E40D69C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,6 +149,34 @@ Global
 		{94860274-7AFE-4649-A205-B503D6407A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94860274-7AFE-4649-A205-B503D6407A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94860274-7AFE-4649-A205-B503D6407A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966BFBC1-D584-4BBF-9A52-ADBBC657DB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966BFBC1-D584-4BBF-9A52-ADBBC657DB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966BFBC1-D584-4BBF-9A52-ADBBC657DB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966BFBC1-D584-4BBF-9A52-ADBBC657DB86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9EDB0AF-EA6B-4F78-B2C4-7C3B03894216}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9EDB0AF-EA6B-4F78-B2C4-7C3B03894216}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9EDB0AF-EA6B-4F78-B2C4-7C3B03894216}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9EDB0AF-EA6B-4F78-B2C4-7C3B03894216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF3469A9-5B0F-47B5-9874-C93C5E9AAFAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF3469A9-5B0F-47B5-9874-C93C5E9AAFAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF3469A9-5B0F-47B5-9874-C93C5E9AAFAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF3469A9-5B0F-47B5-9874-C93C5E9AAFAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF397FEA-3CE8-4981-ABB8-2342D0823FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF397FEA-3CE8-4981-ABB8-2342D0823FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF397FEA-3CE8-4981-ABB8-2342D0823FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF397FEA-3CE8-4981-ABB8-2342D0823FA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70020DAB-52C0-48B2-B38E-215A36341005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70020DAB-52C0-48B2-B38E-215A36341005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70020DAB-52C0-48B2-B38E-215A36341005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70020DAB-52C0-48B2-B38E-215A36341005}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85B077CE-D94D-4177-918B-A726C411D2AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85B077CE-D94D-4177-918B-A726C411D2AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85B077CE-D94D-4177-918B-A726C411D2AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85B077CE-D94D-4177-918B-A726C411D2AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44272F3B-FC4D-47B1-BED0-01560E40D69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44272F3B-FC4D-47B1-BED0-01560E40D69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44272F3B-FC4D-47B1-BED0-01560E40D69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44272F3B-FC4D-47B1-BED0-01560E40D69C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -155,6 +199,13 @@ Global
 		{1F2CF453-D564-4180-B1C8-2E573404CF8D} = {B6F1CF95-978A-40BD-9768-F1F6408824B8}
 		{5E030897-500E-4366-9950-392D6BC7D106} = {B6F1CF95-978A-40BD-9768-F1F6408824B8}
 		{94860274-7AFE-4649-A205-B503D6407A79} = {B6F1CF95-978A-40BD-9768-F1F6408824B8}
+		{966BFBC1-D584-4BBF-9A52-ADBBC657DB86} = {07EA90CA-126A-40F1-9058-838FD9FC51C7}
+		{B9EDB0AF-EA6B-4F78-B2C4-7C3B03894216} = {07EA90CA-126A-40F1-9058-838FD9FC51C7}
+		{DF3469A9-5B0F-47B5-9874-C93C5E9AAFAC} = {07EA90CA-126A-40F1-9058-838FD9FC51C7}
+		{EF397FEA-3CE8-4981-ABB8-2342D0823FA4} = {07EA90CA-126A-40F1-9058-838FD9FC51C7}
+		{70020DAB-52C0-48B2-B38E-215A36341005} = {07EA90CA-126A-40F1-9058-838FD9FC51C7}
+		{85B077CE-D94D-4177-918B-A726C411D2AF} = {07EA90CA-126A-40F1-9058-838FD9FC51C7}
+		{44272F3B-FC4D-47B1-BED0-01560E40D69C} = {07EA90CA-126A-40F1-9058-838FD9FC51C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89372DF8-D918-4697-8CFC-5B71DCAFB4E2}
