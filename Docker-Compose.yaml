@@ -293,7 +293,22 @@ services:
     networks: 
       - compose-network
     ports:
-      - "20200:80"    
+      - "20200:80"
+
+  poc.puc.modulo.web.app:
+    image: ${DOCKER_REGISTRY-}pocpucmodulowebapp
+    container_name: web.app
+    depends_on: 
+        - mysql
+        - mongo
+        - kafka
+    build:
+      context: .
+      dockerfile: DockerfileWebAPP
+    networks: 
+      - compose-network
+    ports:
+      - "20014:80"        
 
 volumes:
     mysqldata:
